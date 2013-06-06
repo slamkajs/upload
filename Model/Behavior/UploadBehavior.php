@@ -1182,7 +1182,6 @@ class UploadBehavior extends ModelBehavior {
 	public function _grab(Model $model, $field, $uri) {
 		$socket = new HttpSocket();
 		$file = $socket->get($uri, array(), array('redirect' => true));
-		var_dump($file);exit;
 		$headers = $socket->response['header'];
 		$file_name = basename($socket->request['uri']['path']);
 		$tmp_file = sys_get_temp_dir() . '/' . $file_name;
